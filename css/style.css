@@ -21,26 +21,26 @@ body{
 #topLeft{
     border-top-left-radius: 100%;
     background-color: rgb(97, 184, 97);
-    box-shadow: 2px 2px 10px 10px rgb(134, 231, 134) inset;
+    box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;
     
 }
 #topRight{
     border-top-right-radius: 100%;
     background-color: rgb(253, 106, 106);
-    box-shadow: 2px 2px 10px 10px rgb(248, 177, 177) inset;
+    box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;
     
 }
 #bottomLeft{
     border-bottom-left-radius: 100%;
     background-color: rgb(255, 255, 110);
-    box-shadow: 2px 2px 10px 10px rgb(255, 255, 167) inset;
+    box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;
     
     
 }
 #bottomRight{
     border-bottom-right-radius: 100%;
     background-color: rgb(132, 132, 255);
-    box-shadow: 2px 2px 10px 10px rgb(181, 181, 255) inset;
+    box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;
     
     
 }
@@ -89,14 +89,20 @@ p{
 #buttons{
     text-align: center;
     padding-right: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    
     
     
 }
 #button1{
     width:50px;
     height: 30px;
+    color: red;
+    font-size: 26px;
+    font-family: Share Tech Mono, monospace, Arial, Helvetica, sans-serif;
+    line-height: 30px;
     background-color: rgb(41, 13, 13);
-    border: 1px solid black;
+    border: 1px inset rgb(179, 176, 176);
     border-radius: 5px;
 }
 
@@ -104,15 +110,19 @@ p{
     width:30px;
     height: 30px;
     background-color: rgb(223, 32, 32);
-    border: 1px solid black;
+    border: 1px ridge rgb(104, 2, 2);
     border-radius: 100%;
+    box-shadow: 2px 2px 5px rgb(141, 140, 140),
+    2px 2px 5px rgb(104, 2, 2) inset;
 }
 
 #button3{
     width:30px;
     height: 30px;
     background-color: rgb(223, 194, 32);
-    border: 1px solid black;
+    border: 1px ridge rgb(153, 161, 33);
     border-radius: 100%;
+    box-shadow: 2px 2px 5px rgb(141, 140, 140), 
+    2px 2px 5px rgb(153, 161, 33) inset;
 }
 
