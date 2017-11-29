@@ -1,8 +1,14 @@
 $(document).ready(function(){
     var count = 0;
+    var level = 1;
+    var sequenceFinished = false;
+    var lightOn = true;
     
     var computer = [];
     var player = [];
+
+    var gameOver = false;
+    var nextMove = true;
 
     //Store original button colors and shaders
     var ogGreen = $("#topLeft").css("background-color");
@@ -32,39 +38,72 @@ $(document).ready(function(){
         startGame();
     });
 
-    function startGame(){                
+    function startGame(){
+        for(var i=0; i<20; i++){
+            computer.push(Math.round(Math.random() * 3));
+        }             
         setInterval(myTimer, 1000);
     }
 
-    function myTimer(){   
-        
-        //Reset Colors
-        $("#topLeft").css({"background-color":ogGreen, "box-shadow":ogGShadow});
-        $("#topRight").css({"background-color":ogRed, "box-shadow":ogRShadow});
-        $("#bottomLeft").css({"background-color":ogYellow, "box-shadow":ogYShadow});
-        $("#bottomRight").css({"background-color":ogBlue, "box-shadow":ogBShadow});
-
-        //Add new random element to sequence     
-        if(computer.length < 20 && !toggle){
-            computer.push(Math.round(Math.random() * 3));
-
-            //Playback sequence so far
-            for(var i=count; i<count+1; i++){
-                console.log("current: "+computer[i]);
-                switch(computer[i]){
-                    case 0: $("#topLeft").css({"background-color":"rgb(117, 228, 135)", "box-shadow":"none"});
-                    break;
-                    case 1: $("#topRight").css({"background-color":"rgb(255, 74, 74)", "box-shadow":"none"});
-                    break;
-                    case 2: $("#bottomLeft").css({"background-color":"rgb(251, 255, 0)", "box-shadow":"none"});
-                    break;
-                    case 3: $("#bottomRight").css({"background-color":"rgb(132, 189, 255)", "box-shadow":"none"});
-                    break;
-                }
+    function myTimer(){           
+        if(count < level){
+            if(lightOn){
+                lightUpColor(count);                
+                $("#button1").html(level);
+                lightOn = !lightOn;
+            }else if(!lightOn){
+                resetColor(count);
+                lightOn = !lightOn;
+                count++;
             }
-            count += 1;
-            $("#button1").html(count);
         }
-        toggle = !toggle;
+        /*Continuously check if player has submitted the required sequence.
+        If they have then increment the level and reset count and the player's submitted
+        sequence in the array*/
+        if(checkPlayerResponse()){            
+            level += 1;
+            count = 0;
+            player = [];
+        }
+       
+    }
+
+    function checkPlayerResponse(){
+        for(var i=0; i<level; i++){
+            if(player[i] != computer[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function resetColor(x){
+        console.log("now here");
+        //$(position).css({"background-color":bgColor, "box-shadow":shadowColor});
+        switch(computer[x]){
+            case 0: $("#topLeft").css({"background-color":ogGreen, "box-shadow":ogGShadow});
+            break;
+            case 1: $("#topRight").css({"background-color":ogRed, "box-shadow":ogRShadow});        
+            break;
+            case 2: $("#bottomLeft").css({"background-color":ogYellow, "box-shadow":ogYShadow});        
+            break;
+            case 3: $("#bottomRight").css({"background-color":ogBlue, "box-shadow":ogBShadow});
+            break;
+        }
+    }
+
+    function lightUpColor(x){
+        console.log("here");
+        //debugger;
+        switch(computer[x]){
+            case 0: $("#topLeft").css({"background-color":"rgb(117, 228, 135)", "box-shadow":"none"});
+            break;
+            case 1: $("#topRight").css({"background-color":"rgb(255, 74, 74)", "box-shadow":"none"});        
+            break;
+            case 2: $("#bottomLeft").css({"background-color":"rgb(251, 255, 0)", "box-shadow":"none"});        
+            break;
+            case 3: $("#bottomRight").css({"background-color":"rgb(132, 189, 255)", "box-shadow":"none"});
+            break;
+        }
     }
 });
