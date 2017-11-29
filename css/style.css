@@ -18,34 +18,33 @@ body{
     float:left;
     border: 5px solid #000;
 }
+.cell:hover{
+    cursor: pointer;
+}
 #topLeft{
     border-top-left-radius: 100%;
-    background-color: rgb(97, 184, 97);
-    
-    box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;
-    
+    background-color: rgb(97, 184, 97);    
+    box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;    
 }
+
 #topRight{
     border-top-right-radius: 100%;
     background-color: rgb(253, 106, 106);
-    
-    box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;
-    
+    box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;    
 }
+
 #bottomLeft{
     border-bottom-left-radius: 100%;
     background-color: rgb(255, 255, 110);
-    box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;
-    
-    
+    box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;        
 }
+
 #bottomRight{
     border-bottom-right-radius: 100%;
     background-color: rgb(132, 132, 255);
-    box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;
-    
-    
+    box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;        
 }
+
 #innerCircle{
     width: 250px;
     height: 250px;
