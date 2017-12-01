@@ -1,15 +1,8 @@
 $(document).ready(function(){
-    var count = 0;
-    var level = 1;
-    var sequenceFinished = false;
-    var lightOn = true;
+    //Setup variables
+    var count, level, lightOn, 
+    computer, player, gameOver,interval;    
     
-    var computer = [];
-    var player = [];
-
-    var gameOver = false;
-    var nextMove = true;
-
     //Store original button colors and shaders
     var ogGreen = $("#topLeft").css("background-color");
     var ogGShadow = $("#topLeft").css("box-shadow");
@@ -19,33 +12,46 @@ $(document).ready(function(){
     var ogYShadow = $("#bottomLeft").css("box-shadow");
     var ogBlue = $("#bottomRight").css("background-color");
     var ogBShadow = $("#bottomRight").css("box-shadow");
-
-    var toggle = false;
-
+    
     $("#topLeft").on("click", function(){
-        player.push(0);
+        player.push(0);        
     });
     $("#topRight").on("click", function(){
-        player.push(1);
+        player.push(1);          
     });
-    $("#bottomLeft").on("click", function(){
-        player.push(2);
+    $("#bottomLeft").on("click", function(){        
+        player.push(2);             
     });
     $("#bottomRight").on("click", function(){
-        player.push(3);
+        player.push(3);        
     });
     $("#b2").on("click", function(){        
-        startGame();
+        startGame();        
     });
 
     function startGame(){
+        //reset variables
+        count = 0;
+        level = 1;    
+        lightOn = true;        
+        computer = [];
+        player = [];
+        gameOver = false; 
+        $("#button1").html("--");
+
+        //Clear timer
+        clearInterval(interval);
+
+        //Create random sequence        
         for(var i=0; i<20; i++){
             computer.push(Math.round(Math.random() * 3));
-        }             
-        setInterval(myTimer, 1000);
+        }     
+        //Create timer        
+        interval = setInterval(myTimer, 1000);
     }
 
-    function myTimer(){           
+    function myTimer(){   
+        //resetColor(count);        
         if(count < level){
             if(lightOn){
                 lightUpColor(count);                
@@ -65,7 +71,6 @@ $(document).ready(function(){
             count = 0;
             player = [];
         }
-       
     }
 
     function checkPlayerResponse(){
@@ -77,9 +82,8 @@ $(document).ready(function(){
         return true;
     }
 
-    function resetColor(x){
-        console.log("now here");
-        //$(position).css({"background-color":bgColor, "box-shadow":shadowColor});
+    function resetColor(x){   
+        console.log("here");           
         switch(computer[x]){
             case 0: $("#topLeft").css({"background-color":ogGreen, "box-shadow":ogGShadow});
             break;
@@ -92,9 +96,7 @@ $(document).ready(function(){
         }
     }
 
-    function lightUpColor(x){
-        console.log("here");
-        //debugger;
+    function lightUpColor(x){                
         switch(computer[x]){
             case 0: $("#topLeft").css({"background-color":"rgb(117, 228, 135)", "box-shadow":"none"});
             break;

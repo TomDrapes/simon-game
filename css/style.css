@@ -9,6 +9,7 @@ body{
     top: 10vh;
     margin: auto;
     border: 14px solid black;
+    background-color: black;
     border-radius: 100%;
     box-shadow: 10px 10px 15px rgb(160, 124, 76);    
 }
@@ -26,11 +27,18 @@ body{
     background-color: rgb(97, 184, 97);    
     box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;    
 }
+#topLeft:active{
+    background-color:rgb(117, 228, 135) !important;
+    box-shadow: none !important;
+}
 
 #topRight{
     border-top-right-radius: 100%;
     background-color: rgb(253, 106, 106);
     box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;    
+}#topRight:active{
+    background-color: rgb(255, 74, 74) !important;
+    box-shadow: none !important;
 }
 
 #bottomLeft{
@@ -38,11 +46,19 @@ body{
     background-color: rgb(255, 255, 110);
     box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;        
 }
+#bottomLeft:active{
+    background-color: rgb(251, 255, 0) !important;
+    box-shadow: none !important;
+}
 
 #bottomRight{
     border-bottom-right-radius: 100%;
     background-color: rgb(132, 132, 255);
     box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;        
+}
+#bottomRight:active{
+    background-color: rgb(132, 189, 255) !important;
+    box-shadow: none !important;
 }
 
 #innerCircle{
@@ -136,4 +152,19 @@ p{
 
 #b2:hover, #b3:hover{
     cursor: pointer;
+}
+#footer{
+    margin-top: 100px;
+    text-align: center;
+    font-family: Share Tech Mono;
+
+}
+a{
+    font-size: 18px;  
+    color: black;     
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px black;
 }
