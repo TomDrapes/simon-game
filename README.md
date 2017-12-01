@@ -15,7 +15,7 @@ This program was written to fullfil the following user stories as specified by t
 **User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.   
 
 ### Screenshot
-![screen](https://github.com/doctorApes/tic-tac-toe/blob/master/img/tictactoe.png)
+![screen](https://github.com/doctorApes/simon-game/blob/master/img/simon.png)
 
 ### How to run
 This program allows the user to play a game of Simon in normal mode and Strict mode.
