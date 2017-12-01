@@ -25,7 +25,8 @@ body{
     background-color: rgb(97, 184, 97);    
     box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;    
     border-style: solid;
-    border-width: 14px 5px 5px 14px;
+    border-color: black;
+    border-width: 18px 8px 8px 18px;
 }
 #topLeft:active{
     background-color:rgb(117, 228, 135) !important;
@@ -37,7 +38,8 @@ body{
     background-color: rgb(253, 106, 106);
     box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;    
     border-style: solid;
-    border-width: 14px 14px 5px 5px;
+    border-color: black;
+    border-width: 18px 18px 8px 8px;
 }#topRight:active{
     background-color: rgb(255, 74, 74) !important;
     box-shadow: none !important;
@@ -48,7 +50,8 @@ body{
     background-color: rgb(255, 255, 110);
     box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;        
     border-style: solid;
-    border-width: 5px 5px 14px 14px;
+    border-color: black;
+    border-width: 8px 8px 18px 18px;
 }
 #bottomLeft:active{
     background-color: rgb(251, 255, 0) !important;
@@ -60,7 +63,8 @@ body{
     background-color: rgb(132, 132, 255);
     box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;        
     border-style: solid;
-    border-width: 5px 14px 14px 5px;
+    border-color: black;
+    border-width: 8px 18px 18px 8px;
 }
 #bottomRight:active{
     background-color: rgb(132, 189, 255) !important;
@@ -136,6 +140,8 @@ p{
 }
 #button2:active{
     background-color: red;
+    box-shadow: 1px 1px 5px rgb(141, 140, 140),
+    2px 2px 5px rgb(104, 2, 2) inset;
 }
 
 #button3{
@@ -149,6 +155,8 @@ p{
 }
 #button3:active{
     background-color: yellow;
+    box-shadow: 1px 1px 5px rgb(141, 140, 140), 
+    2px 2px 5px rgb(153, 161, 33) inset;
 }
 
 #b2:hover, #b3:hover{
@@ -157,10 +165,11 @@ p{
 #footer{
     margin-top: 100px;
     text-align: center;
-    font-family: Share Tech Mono;
+    font-family: Share Tech Mono, Arial, Helvetica, sans-serif;
 }
 a{
     font-size: 18px;  
+    font-weight: bold;
     color: black;     
 }
 a:hover{
@@ -187,7 +196,7 @@ a:hover{
         transform-origin: 0 0;
         
         left: 50%;
-        margin-left: -142px;
+        margin-left: -150px;
       }
     }
     
