@@ -7,8 +7,7 @@ body{
     height: 500px;  
     position: relative; 
     top: 10vh;
-    margin: auto;
-    border: 14px solid black;
+    margin: auto; 
     background-color: black;
     border-radius: 100%;
     box-shadow: 10px 10px 15px rgb(160, 124, 76);    
@@ -16,8 +15,7 @@ body{
 .cell{
     width: 50%;
     height: 50%;
-    float:left;
-    border: 5px solid #000;
+    float:left;   
 }
 .cell:hover{
     cursor: pointer;
@@ -26,6 +24,8 @@ body{
     border-top-left-radius: 100%;
     background-color: rgb(97, 184, 97);    
     box-shadow: 2px 2px 15px 5px rgb(134, 231, 134) inset;    
+    border-style: solid;
+    border-width: 14px 5px 5px 14px;
 }
 #topLeft:active{
     background-color:rgb(117, 228, 135) !important;
@@ -36,6 +36,8 @@ body{
     border-top-right-radius: 100%;
     background-color: rgb(253, 106, 106);
     box-shadow: 2px 2px 15px 5px rgb(248, 177, 177) inset;    
+    border-style: solid;
+    border-width: 14px 14px 5px 5px;
 }#topRight:active{
     background-color: rgb(255, 74, 74) !important;
     box-shadow: none !important;
@@ -45,6 +47,8 @@ body{
     border-bottom-left-radius: 100%;
     background-color: rgb(255, 255, 110);
     box-shadow: 2px 2px 15px 5px rgb(255, 255, 167) inset;        
+    border-style: solid;
+    border-width: 5px 5px 14px 14px;
 }
 #bottomLeft:active{
     background-color: rgb(251, 255, 0) !important;
@@ -55,6 +59,8 @@ body{
     border-bottom-right-radius: 100%;
     background-color: rgb(132, 132, 255);
     box-shadow: 2px 2px 15px 5px rgb(181, 181, 255) inset;        
+    border-style: solid;
+    border-width: 5px 14px 14px 5px;
 }
 #bottomRight:active{
     background-color: rgb(132, 189, 255) !important;
@@ -69,11 +75,9 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -140px 0px 0px -125px;
+    margin: -125px 0 0 -125px;
     background-color: rgb(216, 216, 216);
-    padding: 5px;
-    /*box-shadow: 5px 5px 15px rgb(184, 183, 183) inset;*/
-
+    padding: 5px;    
 }
 
 #name{
@@ -107,10 +111,7 @@ p{
     text-align: center;
     padding-right: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    
-    
-    
+    font-size: 12px;         
 }
 #button1{
     width:50px;
@@ -157,7 +158,6 @@ p{
     margin-top: 100px;
     text-align: center;
     font-family: Share Tech Mono;
-
 }
 a{
     font-size: 18px;  
@@ -168,3 +168,26 @@ a:hover{
     text-decoration: none;
     text-shadow: 1px 1px black;
 }
+
+@media screen and (max-width: 500px){
+    
+      #container{
+        top: 40px;
+        
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        
+        -o-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+        
+        left: 50%;
+        margin-left: -142px;
+      }
+    }
+    
